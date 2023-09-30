@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,300;1,400&family=Outfit:wght@400;700&family=Overpass:ital@1&family=Pacifico&family=Poppins:wght@100;300;400;500&family=Roboto+Condensed&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --body-bg-color: rgb(0,101,195);
+    --white: #fff;
+    --paragraph-color: #e3e3e3;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: var(--body-bg-color);
+}
+
+main > header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+main > header > .logo > img {
+    margin: 20px 0;
+    max-width: 55px;
+    cursor: pointer;
+}
+
+main > header > .logo > img:hover {
+    animation: spinner .3s linear;
+}
+
+@keyframes spinner {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+
+main > header > #navbar {
+    flex: 1;
+    text-align: right;
+}
+
+main > header > #navbar > ul > li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+main > header > #navbar > ul > li > a {
+    color: var(--white);
+    transition: .2s;
+}
+
+main > header > #navbar > ul > li > a:hover {
+    opacity: .8;
+}
+
+main > header > #toggle-menu-icon {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+
+main > header > #toggle-menu-icon:hover {
+    opacity: .8;
+}
+
+main > section.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 70px 0;
+}
+
+main > section.row > .col-1 {
+    flex-basis: 60%;
+    position: relative;
+    margin-left: 30px;
+}
+
+main > section.row > .col-1 > h1, h3 {
+    color: var(--white);
+}
+
+main > section.row > .col-1 > h1 {
+    font-size: 50px;
+}
+
+main > section.row > .col-1 > h3 {
+    font-size: 38px;
+}
+
+main > section.row > .col-1 > p {
+    font-size: 18px;
+    color: var(--paragraph-color);
+}
+
+main > section.row > .col-1 > .btn {
+    border: 0;
+    outline: 0;
+    color: var(--white);
+    background: radial-gradient(circle at 81.9% 53.5%, rgb(173, 53, 53) 16.3%, rgb(240, 60, 60) 100.2%);
+    width: 140px;
+    padding: 10px 8px;
+    font-size: 16px;
+    margin: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+main > section.row > .col-1 > .btn:hover {
+    opacity: .8;
+} 
+
+main > section.row > .col-2 {
+    position: relative;
+    display: flex;
+    flex-basis: 40%;
+    align-items: center;
+}
+
+main > section.row > .col-2 > img{
+    width: 200px;
+    transform: rotate(5deg);
+    transform: rotate(10deg);
+    transition: .2s;
+}
+
+main > section.row > .col-2 > img:hover {
+    transform: rotate(0deg);
+}
+
+/*! Responsive Design*/
+@media only screen and (max-width: 770px) {
+    main > header > #navbar > ul {
+        width: 100%;
+        background-color: rgba(255, 255, 255, .9);
+        position: absolute;
+        top: 90px;
+        right: 0;
+        z-index: 2;
+        overflow: hidden;
+        transition: .4s;
+    }
+    main > header > #navbar > ul > li {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    main > header > #navbar > ul > li > a {
+        color: var(--body-bg-color);
+    }
+    main > header > #toggle-menu-icon {
+        display: block;
+    }
+    main > section.row {
+        margin: 40px 0;
+        flex-direction: column-reverse;
+        gap: 3rem
+    }
+    main > section.row > .col-1 {
+        flex-basis: 100%;
+    }
+    main > section.row > .col-2 {
+        flex-basis: 100%;
+    }
+    main > section.row > .col-2 > img {
+        width: 140px;
+    }
+}
+
+@media only screen and (max-width: 372px) {
+    main > section.row > .col-1 {
+        margin-top: 20px;
+        text-align: center;
+    }
+    main > section.row > .col-1 > h1 {
+        font-size: 24px;
+    }
+    main > section.row > .col-1 > h3 {
+        font-size: 16px;
+    }
+    main > section.row > .col-1 > p {
+        font-size: 14px;
+    }
+    main > section.row > .col-1 > .btn {
+        width: 100px;
+    }
+}
